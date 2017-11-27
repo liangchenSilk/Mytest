@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Magento
+ */
+-->
+<config>
+    <menu>
+         <distributors translate="title" module="lifeloc_distributors">
+            <title>Distributors</title>
+            <sort_order>65</sort_order>
+            <children>
+                <manage translate="title" module="lifeloc_distributors">
+                    <title>Manage Distributors</title>
+                    <action>adminhtml/distributors</action>
+                    <sort_order>50</sort_order>
+                </manage>
+            </children>
+         </distributors>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <distributors translate="title" module="lifeloc_distributors">
+                        <title>Distributors</title>
+                        <sort_order>65</sort_order>
+                        <children>
+                            <manage translate="title">
+                                <title>Manage Distributors</title>
+                                <sort_order>0</sort_order>
+                                <children>
+                                    <save translate="title">
+                                        <title>Save Distributors</title>
+                                        <sort_order>0</sort_order>
+                                    </save>
+                                    <delete translate="title">
+                                        <title>Delete Distributors</title>
+                                        <sort_order>10</sort_order>
+                                    </delete>
+                                </children>
+                            </manage>
+                        </children>
+                    </distributors>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

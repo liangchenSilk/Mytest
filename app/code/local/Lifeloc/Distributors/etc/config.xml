@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module configuration
+ *
+ * @author Magento
+ */
+-->
+<config>
+    <modules>
+        <Lifeloc_Distributors>
+            <version>0.1.0</version>
+        </Lifeloc_Distributors>
+    </modules>
+    <global>
+        <models>
+            <lifeloc_distributors>
+                <class>Lifeloc_Distributors_Model</class>
+                <resourceModel>distributors_resource</resourceModel>
+            </lifeloc_distributors>
+            <distributors_resource>
+                <class>Lifeloc_Distributors_Model_Resource</class>
+                <entities>
+                    <distributors>
+                        <table>distributors_list</table>
+                    </distributors>
+                </entities>
+            </distributors_resource>
+        </models>
+        <helpers>
+            <lifeloc_distributors>
+                <class>Lifeloc_Distributors_Helper</class>
+            </lifeloc_distributors>
+        </helpers>
+        <blocks>
+            <lifeloc_distributors>
+                <class>Lifeloc_Distributors_Block</class>
+            </lifeloc_distributors>
+        </blocks>
+        <resources>
+            <lifeloc_distributors_setup>
+                <setup>
+                    <module>Lifeloc_Distributors</module>
+                    <class>Lifeloc_Distributors_Model_Resource_Setup</class>
+                </setup>
+            </lifeloc_distributors_setup>
+        </resources>
+        <template>
+          <email>
+            <distributors_email_email_template module="lifeloc_distributors">
+              <label>Message to Distributor</label>
+              <file>distributor_form.html</file>
+              <type>text</type>
+            </distributors_email_email_template>
+          </email>
+        </template>
+    </global>
+    <frontend>
+        <routers>
+            <lifeloc_distributors>
+                <use>standard</use>
+                <args>
+                    <module>Lifeloc_Distributors</module>
+                    <frontName>distributors</frontName>
+                </args>
+            </lifeloc_distributors>
+        </routers>
+	<layout>
+		<updates>
+			<lifeloc_distributors>
+				<file>lifeloc_distributors.xml</file>
+			</lifeloc_distributors>
+		</updates>
+	</layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Lifeloc_Distributors before="Mage_Adminhtml">Lifeloc_Distributors_Adminhtml</Lifeloc_Distributors>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <lifeloc_distributors>
+                    <file>lifeloc_distributors.xml</file>
+                </lifeloc_distributors>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

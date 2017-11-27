@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find a distributor</title>
+    <style type="text/css">
+        body {
+        }
+    </style>
+	<script>
+		function showDistributor(){
+			var x = document.getElementById("distributor").value;
+			document.getElementById("distributor_name").innerHTML=x;
+		}
+	</script>
+</head>
+<body>
+        <p>Find a distributor</p>
+		<form action="<?php echo $this->getBaseUrl().'distributors/'.'index/'.'post'; ?>" method="post" id="selectdistributor">
+			Select a Distributor: <br>
+			<select name="distributor" id="distributor" onchange="showDistributor()">
+        			<option value=''>select</option>
+        			<?php $distributor_list = Mage::getModel('lifeloc_distributors/distributors')->getCollection()?>
+        			<?php foreach($distributor_list as $distributor){
+                			if($distributor->getData('email')){
+                        			echo '<option value="'.$distributor->getData('distributor').'">'.
+                        			$distributor->getData('location_name').'</'.'option>';
+                			}
+        			} ?>
+			</select><br>
+			<h1 id="distributor_name"></h1>
+			First Name: <br>
+			<input type="text" name="firstname" value=""><br>
+			Last Name: <br>
+			<input type="text" name="lastname" value=""><br>
+			Email: <br>
+			<input type="email" name="email" value=""><br>
+			Messages: <br>
+			<textarea name="message" rows="10" cols="50"></textarea><br>
+			<button type="submit">submit</button>
+		</form>
+</body>
+</html>

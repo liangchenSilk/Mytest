@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Magento
+ */
+-->
+<layout>
+    <adminhtml_distributors_index>
+        <reference name="content">
+            <block type="lifeloc_distributors/adminhtml_distributors" name="distributors" />
+        </reference>
+    </adminhtml_distributors_index>
+
+    <adminhtml_distributors_grid>
+        <block type="lifeloc_distributors/adminhtml_distributors_grid" name="root" />
+    </adminhtml_distributors_grid>
+
+    <adminhtml_distributors_new>
+        <update handle="adminhtml_distributors_edit" />
+    </adminhtml_distributors_new>
+
+    <adminhtml_distributors_edit>
+
+	        <update handle="editor"/>
+        <reference name="content">
+            <block type="lifeloc_distributors/adminhtml_distributors_edit" name="distributors_edit" />
+        </reference>
+	<reference name="left">
+		<block type="lifeloc_distributors/adminhtml_distributors_edit_tabs" name="distributors_edit_tabs">
+			<block type="lifeloc_distributors/adminhtml_distributors_edit_tab_main" name="distributors_edit_tab_main" />
+			<action method="addTab"><name>main_section</name><block>distributors_edit_tab_main</block></action>
+		</block>
+	</reference>
+
+    </adminhtml_distributors_edit>
+</layout>

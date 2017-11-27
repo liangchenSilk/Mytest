@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module initial config
+ *
+ * @author Magento
+ */
+-->
+<config>
+    <modules>
+        <Lifeloc_Distributors>
+            <active>true</active>
+            <codePool>local</codePool>
+	    <depends>
+                <Mage_Adminhtml />
+            </depends>
+        </Lifeloc_Distributors>
+    </modules>
+</config>
