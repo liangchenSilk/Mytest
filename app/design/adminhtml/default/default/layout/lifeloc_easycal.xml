@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Magento
+ */
+-->
+<layout>
+    <adminhtml_easycal_index>
+        <reference name="content">
+            <block type="lifeloc_easycal/adminhtml_easycal" name="easycal" />
+        </reference>
+    </adminhtml_easycal_index>
+
+    <adminhtml_easycal_grid>
+        <block type="lifeloc_easycal/adminhtml_easycal_grid" name="root" />
+    </adminhtml_easycal_grid>
+
+    <adminhtml_easycal_new>
+        <update handle="adminhtml_easycal_edit" />
+    </adminhtml_easycal_new>
+
+    <adminhtml_easycal_edit>
+
+	        <update handle="editor"/>
+        <reference name="content">
+            <block type="lifeloc_easycal/adminhtml_easycal_edit" name="easycal_edit" />
+        </reference>
+	<reference name="left">
+		<block type="lifeloc_easycal/adminhtml_easycal_edit_tabs" name="easycal_edit_tabs">
+			<block type="lifeloc_easycal/adminhtml_easycal_edit_tab_main" name="easycal_edit_tab_main" />
+			<action method="addTab"><name>main_section</name><block>easycal_edit_tab_main</block></action>
+		</block>
+	</reference>
+
+    </adminhtml_easycal_edit>
+</layout>

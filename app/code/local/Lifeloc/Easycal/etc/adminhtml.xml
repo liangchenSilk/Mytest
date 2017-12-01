@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Magento
+ */
+-->
+<config>
+    <menu>
+         <easycal translate="title" module="lifeloc_easycal">
+            <title>Easycal</title>
+            <sort_order>66</sort_order>
+            <children>
+                <manage translate="title" module="lifeloc_easycal">
+                    <title>Manage</title>
+                    <action>adminhtml/easycal</action>
+                    <sort_order>50</sort_order>
+                </manage>
+            </children>
+         </easycal>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <easycal translate="title" module="lifeloc_easycal">
+                        <title>Easycal</title>
+                        <sort_order>66</sort_order>
+                        <children>
+                            <manage translate="title">
+                                <title>Manage</title>
+                                <sort_order>0</sort_order>
+                                <children>
+                                    <save translate="title">
+                                        <title>Save</title>
+                                        <sort_order>0</sort_order>
+                                    </save>
+                                    <delete translate="title">
+                                        <title>Delete</title>
+                                        <sort_order>10</sort_order>
+                                    </delete>
+                                </children>
+                            </manage>
+                        </children>
+                    </easycal>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

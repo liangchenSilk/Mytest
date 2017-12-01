@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lifeloc_Ordercomment>
+            <version>0.0.1</version>
+        </Lifeloc_Ordercomment>
+    </modules>
+    <global>
+         <models>
+            <lifeloc_ordercomment>
+                <class>Lifeloc_Ordercomment_Model</class>                
+            </lifeloc_ordercomment>
+         </models>
+        <events>
+        <sales_order_place_after>
+                <observers>
+                    <lifeloc_ordercomment>
+                        <class>Lifeloc_Ordercomment_Model_Observer</class>
+                        <method>orderComment</method>
+                    </lifeloc_ordercomment>
+                </observers>
+        </sales_order_place_after>
+        </events>
+    </global>
+</config>

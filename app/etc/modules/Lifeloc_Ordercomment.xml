@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lifeloc_Ordercomment>
+            <codePool>local</codePool>
+            <active>true</active>
+        </Lifeloc_Ordercomment>
+    </modules>
+</config>
