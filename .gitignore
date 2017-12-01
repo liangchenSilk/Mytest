@@ -21,3 +21,4 @@ vendor/
 *.swp
 *.lic
 assets/*
+download/
